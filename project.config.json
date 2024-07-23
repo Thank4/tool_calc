@@ -1,0 +1,18 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "toolCalc",
+  "description": "存款计算器",
+  "appid": "wxba7ff0cd8ba17c70",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "enhance": false,
+    "compileHotReLoad": false,
+    "postcss": false,
+    "minified": false,
+    "minifyJS": true,
+    "minifyWXML": true,
+    "minify": true
+  },
+  "compileType": "miniprogram"
+}
