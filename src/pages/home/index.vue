@@ -40,6 +40,11 @@
             <nut-button type="primary" block :disabled="calcInterestBtn" @click="handleInterestCalc">计算</nut-button>
           </nut-col>
         </nut-row>
+        <nut-row class="share" type="flex" justify="space-evenly" gutter="12">
+          <nut-col :span="21">
+            <nut-button icon="share" plain block openType="share">分享给好友</nut-button>
+          </nut-col>
+        </nut-row>
       </nut-tabpane>
       <nut-tabpane title="💰算收益率">
         <nut-form :model-value="yieldForm" ref="yieldRefForm">
@@ -80,6 +85,11 @@
             <nut-button type="primary" block :disabled="calcYieldBtn" @click="handleYieldCalc">计算</nut-button>
           </nut-col>
         </nut-row>
+        <nut-row class="share" type="flex" justify="space-evenly" gutter="12">
+          <nut-col :span="21">
+            <nut-button icon="share" plain block openType="share">分享给好友</nut-button>
+          </nut-col>
+        </nut-row>
       </nut-tabpane>
       <nut-tabpane title="💰算净值理财">
         <nut-form :model-value="netWorthForm" ref="netWorthRefForm">
@@ -113,6 +123,11 @@
           </nut-col>
           <nut-col :span="10">
             <nut-button type="primary" block :disabled="calcYieldBtn" @click="handleNetWorthCalc">计算</nut-button>
+          </nut-col>
+        </nut-row>
+        <nut-row class="share" type="flex" justify="space-evenly" gutter="12">
+          <nut-col :span="21">
+            <nut-button icon="share" plain block openType="share">分享给好友</nut-button>
           </nut-col>
         </nut-row>
       </nut-tabpane>
