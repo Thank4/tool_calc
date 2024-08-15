@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: '万能计算器'
+  navigationBarTitleText: '理财计算'
 })

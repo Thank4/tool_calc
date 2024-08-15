@@ -1,6 +1,8 @@
 export default defineAppConfig({
-  entryPagePath: 'pages/home/index',
+  entryPagePath: 'pages/mortgage/index',
   pages: [
+    'pages/navigation/index',
+    'pages/mortgage/index',
     'pages/home/index',
     'pages/index/index'
   ],

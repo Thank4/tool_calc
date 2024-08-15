@@ -63,6 +63,7 @@ export default defineConfig(async (merge, { command, mode }) => {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
         chain.resolve.alias
           .set('lodash-es',path.resolve(__dirname, 'node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es'))
+          .set('@',path.resolve(__dirname,'src'))
       }
     },
     h5: {
