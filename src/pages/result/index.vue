@@ -192,7 +192,7 @@ function calculateEqualInstallment(principal, annualRate, termInYears) {
     monthlyPayments: monthlyPayments,
     monthlyPayment: monthlyPayment.toFixed(2), // 每月还款额，保留两位小数
     totalPayment: (totalPayment/10000).toFixed(2),     // 总还款额，保留两位小数
-    totalInterest: totalInterest.toFixed(2)     // 总利息，保留两位小数
+    totalInterest: (totalInterest/10000).toFixed(2)     // 总利息，保留两位小数
   };
 }
 
