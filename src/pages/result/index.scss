@@ -1,11 +1,15 @@
 
 .card {
-  background-color: #4CAF50;
+  background: linear-gradient(to bottom, #FF6B6B, #FF0000);
   color: white;
-  padding: 20px;
+  padding:10px 20px;
   border-radius: 10px;
   text-align: center;
   width: 300px;
+}
+
+.desc{
+  font-size: 25rpx;
 }
 
 .card-content {
@@ -19,15 +23,17 @@
   margin-bottom: 10px;
 }
 
+.amount-container {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直方向上底部对齐 */
+}
 .amount {
   font-size: 48px;
-  margin: 10px 0;
-  display: flex;
-  align-items: flex-end;
 }
 
 .currency {
-  font-size: 14px;
+  font-size: 16px; /* 设置较小的字体大小 */
+  margin-left: 4px; /* 添加左边距以增加间距（可选） */
 }
 
 .details {

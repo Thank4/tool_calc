@@ -4,7 +4,10 @@
       <view class="card">
         <view class="card-content">
           <p class="monthly-payment">每月应还</p>
-          <p class="amount">{{ EqualInstallmentMonthlyAmount }}<span class="currency">元</span></p>
+          <p class="amount-container">
+          <span class="amount">{{ EqualInstallmentMonthlyAmount }}</span><span class="currency">元</span>
+          </p>
+          <p class="desc">每月还款金额不变，其中本金逐月递增，利息逐月递减</p>
           <view class="details">
             <view class="detail-item">
               <span>贷款总额</span>
@@ -31,8 +34,11 @@
       <view class="card">
         <view class="card-content">
           <p class="monthly-payment">首月应还</p>
-          <p class="amount">{{ EqualPrincipalAmount }}<span class="currency">元</span></p>
-          <p class="desc">每月递减约{{EqualPrincipalCommercialLoanForm.monthDecreasingAmount}}元</p>
+          <p class="amount-container">
+            <span class="amount">{{ EqualPrincipalAmount }}</span>
+            <span class="currency">元</span>
+          </p>
+          <p class="desc">每月还款金额递减，本金固定，利息递减约{{EqualPrincipalCommercialLoanForm.monthDecreasingAmount}}元</p>
           <view class="details">
             <view class="detail-item">
               <span>贷款总额</span>
