@@ -163,7 +163,7 @@ import _ from 'lodash'
 
 
 const state = reactive({
-  tab1value: '1',
+  tab1value: '0',
 });
 
 //商业贷款表单
