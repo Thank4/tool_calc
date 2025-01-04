@@ -21,6 +21,10 @@
           </view>
         </view>
       </view>
+      <!--分享按钮 -->
+      <view class="share-button">
+      <nut-button icon="share" plain block type="primary" openType="share">分享计算结果</nut-button>
+      </view>
       <nut-table :columns="state.columns" :data="EqualInstallmentCommercialLoanFormTableData" :striped="state.striped"></nut-table>
     </nut-tabpane>
     <nut-tabpane title="等额本金">
@@ -44,6 +48,10 @@
             </view>
           </view>
         </view>
+      </view>
+      <!--分享按钮 -->
+      <view class="share-button">
+        <nut-button icon="share" plain block type="primary" openType="share">分享计算结果</nut-button>
       </view>
       <nut-table :columns="state.columns" :data="EqualPrincipalCommercialLoanFormTableData" :striped="state.striped"></nut-table>
     </nut-tabpane>
@@ -135,8 +143,6 @@ onMounted(() => {
   EqualInstallmentCommercialLoanFormTableData = monthlyPayments
 
   const { EqualPrincipalMonthlyPayments,firstPayment,monthDecreasingAmount,EqualPrincipalTotalPayment,EqualPrincipalTotalInterest} = calculateEqualPrincipal(EqualPrincipalCommercialLoanForm.amount*10000, EqualPrincipalCommercialLoanForm.rateOfInterest, EqualPrincipalCommercialLoanForm.duration)
-  console.log(EqualPrincipalMonthlyPayments)
-  console.log(monthDecreasingAmount)
   EqualPrincipalAmount.value = firstPayment
   EqualPrincipalCommercialLoanForm.interest = EqualPrincipalTotalInterest
   EqualPrincipalCommercialLoanForm.monthDecreasingAmount = monthDecreasingAmount

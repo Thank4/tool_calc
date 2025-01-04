@@ -20,6 +20,17 @@
   margin: 0 20px;
 }
 
-.share{
+.share {
   margin-top: 12px;
+}
+
+.duration{
+  font-size: 18px;
+  color: #000;
+  text-align: right;
+  margin-right: 50rpx;
+  .text{
+    font-weight: bold;
+    margin-right: 10rpx;
+  }
 }
