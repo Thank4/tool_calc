@@ -6,7 +6,8 @@ export default defineAppConfig({
     'pages/mortgage/index',
     'pages/home/index',
     'pages/index/index',
-    'pages/result/index'
+    'pages/result/index',
+    'pages/combinationResult/index'
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -149,6 +149,7 @@ onMounted(() => {
   EqualInstallmentCommercialLoanFormTableData = monthlyPayments
 
   const { EqualPrincipalMonthlyPayments,firstPayment,monthDecreasingAmount,EqualPrincipalTotalPayment,EqualPrincipalTotalInterest} = calculateEqualPrincipal(EqualPrincipalCommercialLoanForm.amount*10000, EqualPrincipalCommercialLoanForm.rateOfInterest, EqualPrincipalCommercialLoanForm.duration)
+
   EqualPrincipalAmount.value = firstPayment
   EqualPrincipalCommercialLoanForm.interest = EqualPrincipalTotalInterest
   EqualPrincipalCommercialLoanForm.monthDecreasingAmount = monthDecreasingAmount
