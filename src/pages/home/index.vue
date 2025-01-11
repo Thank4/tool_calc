@@ -25,11 +25,7 @@
             </nut-input>
           </nut-form-item>
           <nut-form-item label="利息" label-width="150">
-            <nut-input class="input-class" v-model="interestForm.interest" type="number" readonly  input-align="right">>
-              <template #rightExtra>
-                <span class="suffix">元</span>
-              </template>
-            </nut-input>
+            <view class="interest"><text class="text">{{interestForm.interest}} 元 </text></view>
           </nut-form-item>
         </nut-form>
         <nut-row type="flex" justify="space-evenly" gutter="12">
@@ -70,11 +66,7 @@
             </nut-input>
           </nut-form-item>
           <nut-form-item label="年化收益率（365）" label-width="150">
-            <nut-input class="input-class" v-model="yieldForm.yield" type="number" readonly  input-align="right">>
-              <template #rightExtra>
-                <span class="suffix">%</span>
-              </template>
-            </nut-input>
+            <view class="interest"><text class="text">{{yieldForm.yield}} % </text></view>
           </nut-form-item>
         </nut-form>
         <nut-row type="flex" justify="space-evenly" gutter="12">
@@ -110,11 +102,7 @@
             </nut-input>
           </nut-form-item>
           <nut-form-item label="年化收益率（365）" label-width="150">
-            <nut-input class="input-class" v-model="netWorthForm.yield" type="number" readonly  input-align="right">>
-              <template #rightExtra>
-                <span class="suffix">%</span>
-              </template>
-            </nut-input>
+            <view class="interest"><text class="text">{{netWorthForm.yield}} % </text></view>
           </nut-form-item>
         </nut-form>
         <nut-row type="flex" justify="space-evenly" gutter="12">
