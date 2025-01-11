@@ -658,6 +658,7 @@ watch(()=>combinationLoanForm.providentFundAmount, (newVal) => {
 
 function confirm(e) {
   commercialLoanForm.duration = Number(e.selectedValue[0])
+  providentFundLoanForm.duration = Number(e.selectedValue[0])
 }
 
 
