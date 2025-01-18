@@ -346,7 +346,7 @@ import _ from 'lodash'
 
 
 const state = reactive({
-  tab1value: '2',
+  tab1value: '0',
 });
 
 //商业贷款表单
@@ -617,13 +617,11 @@ watchEffect(() => {
 });
 
 watchEffect(() => {
-  console.log('housePrice changed:', combinationLoanForm.housePrice);
   combinationLoanForm.amount = (combinationLoanForm.housePrice * (combinationLoanForm.percent /10)).toFixed(2);
 });
 
 
 watch(()=>combinationLoanForm.amount, (newVal) => {
-  console.log(newVal)
   combinationLoanForm.providentFundAmount = newVal - Number(combinationLoanForm.commercialAmount)
 },{deep:true,immediate:false})
 watch(()=>combinationLoanForm.commercialAmount, (newVal) => {

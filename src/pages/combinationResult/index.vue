@@ -74,12 +74,12 @@
         <nut-tabpane title="月贷款合计">
           <nut-table :columns="state.columns" :data="combinedEqualPrincipalLoanRes.combinedLoanResult.monthlyPayments" :striped="state.striped"></nut-table>
         </nut-tabpane>
-<!--        <nut-tabpane title="商业贷款">-->
-<!--          <nut-table :columns="state.columns" :data="combinedEqualPrincipalLoanRes.commercialLoanResult.EqualPrincipalMonthlyPayments" :striped="state.striped"></nut-table>-->
-<!--        </nut-tabpane>-->
-<!--        <nut-tabpane title="公积金贷款">-->
-<!--          <nut-table :columns="state.columns" :data="combinedEqualPrincipalLoanRes.providentFundLoanResult.EqualPrincipalMonthlyPayments" :striped="state.striped"></nut-table>-->
-<!--        </nut-tabpane>-->
+        <nut-tabpane title="商业贷款">
+          <nut-table :columns="state.columns" :data="combinedEqualPrincipalLoanRes.commercialLoanResult.EqualPrincipalMonthlyPayments" :striped="state.striped"></nut-table>
+        </nut-tabpane>
+        <nut-tabpane title="公积金贷款">
+          <nut-table :columns="state.columns" :data="combinedEqualPrincipalLoanRes.providentFundLoanResult.EqualPrincipalMonthlyPayments" :striped="state.striped"></nut-table>
+        </nut-tabpane>
       </nut-tabs>
 
     </nut-tabpane>
@@ -160,8 +160,6 @@ const combinedEqualPrincipalLoanRes = reactive({
   combinedLoanResult:{}
 })
 
-
-
 onMounted(() => {
   console.log("组合计算")
   if (getCurrentInstance().router.params?.data){
@@ -186,13 +184,11 @@ onMounted(() => {
     combinedEqualPrincipalLoanResult
   } = calculateEqualPrincipalCombinedLoan(paramForm.commercialLoan, paramForm.providentFundLoanForm)
   console.log(combinedEqualInstallmentLoanResult)
-  combinedEqualPrincipalLoanRes.commercialLoanResult = commercialEqualPrincipalLoanResult
-  combinedEqualPrincipalLoanRes.providentFundLoanResult= providentFundEqualPrincipalLoanResult
-  combinedEqualPrincipalLoanRes.combinedLoanResult = combinedEqualPrincipalLoanResult
+  // combinedEqualPrincipalLoanRes.commercialLoanResult = commercialEqualPrincipalLoanResult
+  // combinedEqualPrincipalLoanRes.providentFundLoanResult= providentFundEqualPrincipalLoanResult
+  // combinedEqualPrincipalLoanRes.combinedLoanResult = combinedEqualPrincipalLoanResult
   console.log(combinedEqualPrincipalLoanRes)
 
-
-  tabVal.value = 0
 })
 
 
@@ -268,20 +264,20 @@ function calculateInstallmentCombinedLoan(commercialLoan, providentFundLoan){
     commercialLoanResultMonthlyPayments.push({
       periods: i,
       monthlyTotalPayment: Number(
-        (Number(commercialLoanResult.monthlyPayments[i]?.monthlyTotalPayment) ?? 0) +
-        (Number(providentFundLoanResult.monthlyPayments[i]?.monthlyTotalPayment) ?? 0)
+        Number(commercialLoanResult.monthlyPayments[i]?.monthlyTotalPayment ?? 0) +
+        Number(providentFundLoanResult.monthlyPayments[i]?.monthlyTotalPayment ??0)
       ).toFixed(2),
       monthlyPrincipalPayment: Number(
-        (Number(commercialLoanResult.monthlyPayments[i]?.monthlyPrincipalPayment) ?? 0) +
-        (Number(providentFundLoanResult.monthlyPayments[i]?.monthlyPrincipalPayment) ?? 0)
+        Number(commercialLoanResult.monthlyPayments[i]?.monthlyPrincipalPayment ?? 0) +
+        Number(providentFundLoanResult.monthlyPayments[i]?.monthlyPrincipalPayment ?? 0)
       ).toFixed(2),
       monthlyInterestPayment: Number(
-        (Number(commercialLoanResult.monthlyPayments[i]?.monthlyInterestPayment) ?? 0) +
-        (Number(providentFundLoanResult.monthlyPayments[i]?.monthlyInterestPayment) ?? 0)
+        Number(commercialLoanResult.monthlyPayments[i]?.monthlyInterestPayment ?? 0) +
+        Number(providentFundLoanResult.monthlyPayments[i]?.monthlyInterestPayment ?? 0)
       ).toFixed(2),
       remainingPrincipal: Number(
-        (Number(commercialLoanResult.monthlyPayments[i]?.remainingPrincipal) ?? 0) +
-        (Number(providentFundLoanResult.monthlyPayments[i]?.remainingPrincipal) ?? 0)
+        Number(commercialLoanResult.monthlyPayments[i]?.remainingPrincipal ?? 0) +
+        Number(providentFundLoanResult.monthlyPayments[i]?.remainingPrincipal ?? 0)
       ).toFixed(2)
     });
   }
@@ -371,24 +367,23 @@ function calculateEqualPrincipalCombinedLoan(commercialLoan, providentFundLoan){
     commercialLoanResultMonthlyPayments.push({
       periods: i,
       monthlyTotalPayment: Number(
-        (Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyTotalPayment) ?? 0) +
-        (Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyTotalPayment) ?? 0)
+        Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyTotalPayment ?? 0) +
+        Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyTotalPayment ?? 0)
       ).toFixed(2),
       monthlyPrincipalPayment: Number(
-        (Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyPrincipalPayment) ?? 0) +
-        (Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyPrincipalPayment) ?? 0)
+        Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyPrincipalPayment ?? 0) +
+        Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyPrincipalPayment ?? 0)
       ).toFixed(2),
       monthlyInterestPayment: Number(
-        (Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyInterestPayment) ?? 0) +
-        (Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyInterestPayment) ?? 0)
+        Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyInterestPayment ?? 0) +
+        Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.monthlyInterestPayment ?? 0)
       ).toFixed(2),
       remainingPrincipal: Number(
-        (Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.remainingPrincipal) ?? 0) +
-        (Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.remainingPrincipal) ?? 0)
+        Number(commercialEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.remainingPrincipal ?? 0) +
+        Number(providentFundEqualPrincipalLoanResult.EqualPrincipalMonthlyPayments[i]?.remainingPrincipal ?? 0)
       ).toFixed(2)
     });
   }
-
 
   const combinedEqualPrincipalLoanResult = {
     monthlyPayments: commercialLoanResultMonthlyPayments,
@@ -405,7 +400,6 @@ function calculateEqualPrincipalCombinedLoan(commercialLoan, providentFundLoan){
     combinedEqualPrincipalLoanResult
   }
 }
-
 
 
 </script>

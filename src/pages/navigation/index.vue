@@ -2,6 +2,7 @@
 import './index.scss'
 import manageMoneyIcon from '@/assets/icon/manageMoney.png';
 import mortgageIcon from '@/assets/icon/mortgage.png';
+import taxIcon from '@/assets/icon/tax.png';
 import Taro from "@tarojs/taro";
 const goPage = (url: string) => {
   Taro.navigateTo({
@@ -15,6 +16,7 @@ const goPage = (url: string) => {
   <nut-grid :column-num="2">
     <nut-grid-item :icon="manageMoneyIcon" text="理财计算" @click="goPage('/pages/home/index')"></nut-grid-item>
     <nut-grid-item :icon="mortgageIcon" text="房贷计算" @click="goPage('/pages/mortgage/index')"></nut-grid-item>
+<!--    <nut-grid-item :icon="taxIcon" text="购房税费计算" @click="goPage('/pages/tax/index')"></nut-grid-item>-->
   </nut-grid>
   </view>
   <view class="share-button">
